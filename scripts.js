@@ -1,7 +1,15 @@
 //Variables for functionality
-var Overall="", First="clear,num-9,num-8,num-7,num-6,num-5,num-4,num-3,num-2,num-1"; Second="", Opp="";
+var Overall="", 
+    //holds answer to all calculations
+    numberKeyed="clear,num-9,num-8,num-7,num-6,num-5,num-4,num-3,num-2,num-1"; 
+    //number entered
+    afterOpp="", 
+    //set of numbers entered after opp key is pressed
+    Opp="";
+    //operator key for math functions
+document.addEventListener("DOMContentLoader", function(event){}   
 //Functions
-function Clear(
+function Clear()
     {
         First = "";
         Second = "";
@@ -9,32 +17,32 @@ function Clear(
         Overall = "";
         document.getElementById('readout').innerHTML = '0';
     }
-);
 //Clears function on page load
 function Init()
 {
         Clear();
 }
-//
-function MyClick($key)
+//Shows functioning of numbered keys
+function MyClick(numberKeyed)
     { var Display="";
 if(Opp == ""){
-    First = First + $key;
-    document.getElementById('screen').innerHTML = First;
+    First = First + numberKeyed;
+    document.getElementById('readout').innerHTML = First;
     }else{
-    Second = Second + $key;
-    Display = document.getElementById('screen').innerHTML;
-    document.getElementById('screen').innerHTML = First + '' + Opp + '' + Second;    
+    Second = Second + numberKeyed;
+    Display = document.getElementById('readout').innerHTML;
+    document.getElementById('readout').innerHTML = First + '' + Opp + '' + Second;    
     }
 }
-//Opp function
+console.log(MyClick);
+//Opp function; Adds the operator sign to the 'opp' variable
 function Operator($sign)
 {   var Display="";
     Opp = $sign;
 //Check for first and second factor values (i.e."there is already been a function")
 if(First != "" && Second != "") DoSum();
-    Display = document.getElementById('screen').innerHTML;
-    document.getElementById('screen').innerHTML = Display + ' ' + Opp + ' ';
+    Display = document.getElementById('readout').innerHTML;
+    document.getElementById('readout').innerHTML = Display + ' ' + Opp + ' ';
 }
 //Illustrating sum function
 function DoSum()
@@ -45,7 +53,7 @@ if(First != "" && Second != "" && Opp != "")
     {
         string = First + ' ' + Opp + ' ' + Second;
         Overall = eval(string);
-        document.getElementById('screen').innerHTML = Overall;
+        document.getElementById('readout').innerHTML = Overall;
         //Clear the First, Second & Opp variables for further use
         First = Overall;
         Second = " ";
