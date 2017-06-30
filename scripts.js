@@ -7,7 +7,8 @@ var Overall="",
     //set of numbers entered after opp key is pressed
     Opp="";
     //operator key for math functions
-document.addEventListener("DOMContentLoader", function(event){}   
+document.addEventListener("DOMContentLoader", function(event){
+})   
 //Functions
 function Clear()
     {
