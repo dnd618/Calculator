@@ -40,3 +40,7 @@
 .clearfix::after {
   clear: both;
 }
+/*Trying to highlight on mouse hover*/
+mousehover {
+     background: lightblue;
+   }
