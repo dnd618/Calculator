@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Variables for functionality
 var Overall="", 
     //holds answer to all calculations
@@ -62,6 +63,28 @@ if(First != "" && Second != "" && Opp != "")
     }
 }
 //This final function completes the code. It checks to see if there are 3 values inside the variables. If so, it calculates the answer. It takes the new variable 'string' and adds to that string all 3 values from the global variables (First,Opp and Second) so we end up with one string.
+=======
+//Numbers to readout
+num = $('.num'),
+readout = $('#readout'),
+zeroText = '0';
+newNum = true;
+>>>>>>> fe2316eea969770aa1c688bcfad24faa08702d63
 
-// http://mrbool.com/how-to-make-a-calculator-in-javascript/26562
-// Read more: http://mrbool.com/how-to-make-a-calculator-in-javascript/26562#ixzz4lQi5iCMm
+$(document).ready(function(){
+    $(readout).append(zeroText);
+    // handleSpan();
+    handleNum();
+});
+    function handleNum(){
+        $(num).on('mousedown', function() {
+            $(readout).empty();
+            var numText = $(this).text();
+            if(newNum){
+                $('#readout').append(numText);
+            } else {
+            $(readout).empty();            
+            }
+        });   
+    };
+//Highlight keys
